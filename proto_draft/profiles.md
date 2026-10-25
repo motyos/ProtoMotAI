@@ -32,4 +32,4 @@
 2. ספריית תרחישים `scenarios.md` (אופציונלי): תרחישים מוכנים בתבנית `T-scenario` עם מזהה `<key>.<n>`. בפרויקט מעתיקים אותם כ-`sc-<n>` עם "נגזר מ: <key>.<n>".
 3. שורה בטבלת המתגים של `settings.md` ובטבלה שלמעלה.
 4. בדיקה: `python3 tools/check_manifest.py`.
-5. מדריך תרומה מלא: `docs/contributing_profiles.md`.
+5. מדריך תרומה מלא: `docs/he/contributing_profiles.md`.

@@ -1,47 +1,51 @@
 # ProtoMotAI
 
+[English](README.en.md) | [עברית](README.md)
+
 פרוטוקול גנרי לעבודה עם Claude (claude.ai) כשהוא מחובר למחשב או לשרת שלכם. הוא מגדיר איך מבקשים אישור לפני פעולה, איך מטפלים בסודות, איך מתעדים ריצות והחלטות, ואיך חוזרים בצורה מסודרת אחרי הפסקה, כך שמי שפותח צ'אט חדש לא מתחיל מדף ריק.
 
-מסמך: README | גרסה: 0.1 | סטטוס: טיוטה | עודכן: 2026-10-23 | מתאר פרוטוקול: PROTOMOTAI_V1 (טיוטה)
+מסמך: README | גרסה: 0.1 | סטטוס: טיוטה | עודכן: 2026-10-25 | מתאר פרוטוקול: PROTOMOTAI_V1 (טיוטה)
 
-> **סטטוס: טיוטה.** הפרוטוקול נבדק בבדיקות "התחלה קרה" (סוכן שקורא רק את נקודת הכניסה ועונה על שאלות) ובבדיקות עצמיות לכלים. הוא עדיין לא נוסה בפרויקט חי לאורך זמן. מה שנאכף בכלי ומה שהוא הוראה בלבד מפורט ב-[security](docs/security.md).
+> **סטטוס: טיוטה.** הפרוטוקול נבדק בבדיקות "התחלה קרה" (סוכן שקורא רק את נקודת הכניסה ועונה על שאלות) ובבדיקות עצמיות לכלים. הוא עדיין לא נוסה בפרויקט חי לאורך זמן. מה שנאכף בכלי ומה שהוא הוראה בלבד מפורט ב-[security](docs/he/security.md).
 
 ## למי זה מתאים
 - מי שמחבר את Claude לשרת או למחשב ורוצה גבולות ברורים: מה מותר לקרוא, מה מותר לכתוב, מתי חייבים לשאול.
 - מי שעובד על פרויקט ארוך עם כמה צ'אטים לאורך זמן ורוצה שהמצב יישמר בקבצים ולא בזיכרון של שיחה.
 - מי שרוצה לעבוד בצורה מסודרת בלי להמציא נהלים: מפתחים, מנהלי רשת ומנהלי IT.
 
-## איך זה עובד, בשלוש שורות
+## איך זה עובד, בקצרה
 1. לפני כל פעולה Claude מציג **רשימה ממוספרת** ומחכה: "אשר 1,3 / דחה 2 / שנה 4". מה שלא אושר לא נעשה.
 2. הוא כותב **רק** בתיקייה שהגדרתם. קבצי סודות לא נפתחים ולא מודפסים.
 3. כל ריצה מתועדת בקובץ התקדמות וביומן, ומשם אפשר להמשיך בצ'אט חדש.
+4. **מודעות לטוקנים ולמכסה:** הפרוטוקול עוקב אחרי שימוש בטוקנים לכל ריצה, מזכיר לכם לדווח על ניצול הסשן, ומתאים מקביליות ובחירת מודל כדי לא לחרוג מהמכסה ולא להשאיר אותה ללא ניצול.
 
 ## התחלה בחמש דקות
-ראו [quickstart](docs/quickstart.md). בקצרה: מוסיפים להוראות הפרויקט שורה אחת, "לקרוא את `<נתיב>/index.md` ולעבוד לפיו".
+ראו [quickstart](docs/he/quickstart.md). בקצרה: מוסיפים להוראות הפרויקט שורה אחת, "לקרוא את `<נתיב>/index.md` ולעבוד לפיו".
 
 ## מבנה המאגר ומי קורא מה
 - `proto_draft/` (בעתיד `proto_approved/`): **הפרוטוקול עצמו**. הצ'אט קורא אותו, החל מ-`index.md`.
 - בתוך הפרוטוקול: `profiles.md` (פרופילים מקצועיים), `core/remote_protocol.md` (פרוטוקול ממקור מרוחק והגדרות פרויקט מקומיות), `tools_build/` ו-`tools_install/` (קטלוגי כלים), `security/` (פרוטוקולי אבטחה).
-- `docs/`: תיעוד לבני אדם. הצ'אט לא צריך לקרוא אותו, ו-`docs/reference/` נוצר מהפרוטוקול.
+- `docs/he/` ו-`docs/en/`: תיעוד לבני אדם בעברית ובאנגלית. הצ'אט לא צריך לקרוא אותו, ו-`docs/reference/` נוצר מהפרוטוקול.
 - `SECURITY.md`: איך מדווחים על פגיעות. `.gitignore`: קבצים שאסור להכניס למאגר.
 - `LICENSE.md`, `LICENSE-CODE.md`, `NOTICE.md`, `CITATION.cff`: רישיון וייחוס בשורש.
 
 ## תיעוד
 | מסמך | תוכן |
 |---|---|
-| [docs/quickstart.md](docs/quickstart.md) | פרויקט חדש או מעבר מפרויקט קיים, צעד אחר צעד |
-| [docs/concepts.md](docs/concepts.md) | המושגים: אישור, מודולים ומתגים, ריצות, החלטות, סודות |
-| [docs/faq.md](docs/faq.md) | שאלות נפוצות ותקלות |
-| [docs/security.md](docs/security.md) | מה מוגן, מה לא נאכף, ואיך מדווחים על פגיעות |
+| [docs/he/overview.md](docs/he/overview.md) | סקירה קצרה: מה זה, איזו בעיה זה פותר, ואיפה הפרויקט עומד |
+| [docs/he/quickstart.md](docs/he/quickstart.md) | פרויקט חדש או מעבר מפרויקט קיים, צעד אחר צעד |
+| [docs/he/concepts.md](docs/he/concepts.md) | המושגים: אישור, מודולים ומתגים, ריצות, החלטות, סודות |
+| [docs/he/faq.md](docs/he/faq.md) | שאלות נפוצות ותקלות |
+| [docs/he/security.md](docs/he/security.md) | מה מוגן, מה לא נאכף, ואיך מדווחים על פגיעות |
 | [docs/reference/](docs/reference/modules.md) | מודולים, הגדרות, תבניות, כלים ומזהים (נוצר אוטומטית) |
-| [docs/contributing_profiles.md](docs/contributing_profiles.md) | איך לתרום פרופיל מקצועי |
+| [docs/he/contributing_profiles.md](docs/he/contributing_profiles.md) | איך לתרום פרופיל מקצועי |
 
 נקודת הכניסה של הפרוטוקול עצמו, שהצ'אט קורא, היא [proto_draft/index.md](proto_draft/index.md). **אין צורך שהצ'אט יקרא את `docs/`**.
 
 ## רישיון וייחוס
 - מסמכים ותבניות: Creative Commons Attribution 4.0 (CC BY 4.0). ראו [LICENSE.md](LICENSE.md).
 - סקריפטים: MIT, ראו [LICENSE-CODE.md](LICENSE-CODE.md).
-- ייחוס נדרש: "ProtoMotAI by osmoty, https://gitlab.com/osmoty/protomotai". ראו [NOTICE.md](NOTICE.md) ו-[CITATION.cff](CITATION.cff).
+- ייחוס נדרש: "ProtoMotAI by osmoty, https://github.com/motyos/ProtoMotAI". ראו [NOTICE.md](NOTICE.md) ו-[CITATION.cff](CITATION.cff).
 
 ## תרומה ודיווח
-הצעות לשיפור והערות: [Issues בפרויקט](https://gitlab.com/osmoty/protomotai/-/issues). דיווח על פגיעות אבטחה: [docs/security.md](docs/security.md).
+הצעות לשיפור והערות: [Issues בפרויקט](https://github.com/motyos/ProtoMotAI/issues). דיווח על פגיעות אבטחה: [docs/he/security.md](docs/he/security.md).

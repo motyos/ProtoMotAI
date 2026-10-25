@@ -1,7 +1,9 @@
 # מדיניות אבטחה
 
+[English](SECURITY.en.md) | [עברית](SECURITY.md)
+
 ## דיווח על פגיעות או חשיפת סוד
-אל תפתחו issue ציבורי. פתחו issue במאגר וסמנו אותו **Confidential** (תיבת "This issue is confidential" ב-GitLab), או צרו קשר דרך פרופיל המחבר שבקובץ `NOTICE.md`.
+אל תפתחו issue ציבורי. השתמשו ב-"Report a vulnerability" בלשונית Security של המאגר ב-GitHub, או צרו קשר דרך הפרופיל שבקובץ `NOTICE.md`.
 
 כללו: איזה קובץ, מה הבעיה, איך לשחזר. אל תצרפו סודות אמיתיים.
 

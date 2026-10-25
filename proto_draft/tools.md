@@ -31,6 +31,8 @@
 | tool-23 | protocol | `tools/test_check_registry.py` | בדיקה עצמית ל-check_registry | אחרי שינוי ב-check_registry | → PASS/FAIL | R0 | instruction | כן | פעיל |
 | tool-24 | protocol | `tools/test_leak_check.py` | בדיקה עצמית ל-leak_check (נכשל סגור, דילוגים, התאמה) | אחרי שינוי ב-leak_check | → PASS/FAIL | R0 | instruction | כן | פעיל |
 | tool-25 | protocol | `tools/test_shell_tools.py` | בדיקה עצמית ל-run_lock.sh, runlog.sh ו-check_resources.sh | אחרי שינוי באחד מהם | → PASS/FAIL | R0 | instruction | Linux בלבד | פעיל |
+| tool-26 | protocol | `tools/check_translation.py` | בדיקת זוגות עברית-אנגלית של דפי הכניסה והתיעוד (קיום, מספר כותרות, בלוקי קוד, תאריך עדכון) | אחרי שינוי בדף כניסה או ב-`docs/he`/`docs/en` | → OK/WARN | R0 | warn-only | כן | פעיל |
+| tool-27 | protocol | `tools/test_check_translation.py` | בדיקה עצמית ל-check_translation | אחרי שינוי ב-check_translation | → PASS/FAIL | R0 | instruction | כן | פעיל |
 
 ## כלים שמייצרים מסמכים
 אין בפרוטוקול. (בפרויקט מאמץ: איפה הפלט, מתי הוא ישן, מי מרענן.)

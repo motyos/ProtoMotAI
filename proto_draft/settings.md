@@ -39,7 +39,7 @@
 | stale_lock_hours | 3 (נעילה ישנה מזה = שואלים לפני takeover) |
 | heartbeat_minutes | 15 (שורת יומן בפעולה ארוכה) |
 | disk_stop_percent | 80 (דיסק מעל זה = עצירה) |
-| session_usage_cap_percent | 80 (מעל זה מקטינים מקביליות) |
+| session_usage_cap_percent | 80 (לפי דיווח הבעלים; מעל זה מקטינים מקביליות, מתחת מותר להגדיל עד התקרה) |
 | agents_concurrency_cap | לפי משאבים באותו רגע; ברירת מחדל 5 |
 | cold_start_checks_per_run | 3 (תקציב בדיקות קרות לריצה) |
 | consultations_per_run | 2 (רק כש-consultation_panel דלוק) |
