@@ -1,0 +1,8 @@
+_to_delete/
+*.bak
+*.tmp
+runs/scan_*/
+runs/protocol_cache/
+.gitconfig
+runs/publish_export/
+runs/publish_export*/

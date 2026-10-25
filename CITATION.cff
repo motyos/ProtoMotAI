@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this protocol, please cite it as below."
+title: "ProtoMotAI"
+version: "1.0.1"
+date-released: "2026-10-25"
+type: software
+authors:
+  - alias: "osmoty"
+repository-code: "https://gitlab.com/osmoty/protomotai"
+url: "https://gitlab.com/osmoty/protomotai"
+license:
+  - CC-BY-4.0
+  - MIT
